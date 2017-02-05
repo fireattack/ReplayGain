@@ -1,2 +1,2 @@
 # ReplayGain
-Compatible with MATLAB 2016
+Modified from http://replaygain.hydrogenaud.io/proposal/mfiles/index.html to make it compatible with MATLAB 2016
