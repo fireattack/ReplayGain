@@ -17,7 +17,6 @@ function Vrms = replaygain(filename,a1,b1,a2,b2)
 lngth=size(audioread(filename));
 samples=lngth(1);
 channels=lngth(2);
-disp(channels)
 % Read sampling rate and No. of bits
 [dummy, fs]=audioread(filename,[1 2]);
 
@@ -76,7 +75,7 @@ end
 close(wbh);
 
 % Convert to dB
-Vrms_all=10*log10(Vrms_all+10^-10);
+Vrms_all=10*log10(Vrms_all+10^-10); % keep in mind we never actually square-root Vrms before, thus we use 10*log10 here instead of 20*log10.
 % Sort the Vrms values into numerical order
 Vrms_all=sort(Vrms_all);
 % Pick the 95% value
